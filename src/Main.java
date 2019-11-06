@@ -5,7 +5,6 @@ public class Main {
     public static void main(String[] args) {
 
         int retirementAge = 65;
-        int retirementMoney = 800000;
 
         Scanner sc = new Scanner(System.in);
 
@@ -16,18 +15,27 @@ public class Main {
         int age = sc.nextInt();
 
         System.out.println(name + ", retirement is at age " + retirementAge + ". Let's see if you're on track for retirement.");
-        System.out.println("What is your annual salary?");
 
+        System.out.println("What is your annual salary?");
         int salary = sc.nextInt();
 
+        System.out.println("How much money do you have saved up so far?");
+        int currentSavings = sc.nextInt();
 
-        if (retirementMoney >= (salary * 10)) {
+        int retirementMoney = salary * 10;
+
+        retirementCalculation(currentSavings, retirementMoney);
+
+    }
+
+    public static void retirementCalculation(int currentSavings, int retirementMoney) {
+        if (currentSavings >= retirementMoney) {
             System.out.println("Congratulations, you are on track for retirement!");
         } else {
             System.out.println("Oops, you need to save more for retirement!");
         }
-
     }
+
 }
 
 
